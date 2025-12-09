@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kitchen Master | Кухни и шкафы на заказ</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/js/script.js" />  
+  </head>
+  <body>
+    <!-- Шапка сайта -->
+    <header class="header">
+      <div class="container">
+        <nav class="navbar">
+          <a href="#" class="logo">
+            <i class="fas fa-utensils"></i>
+            <span>KITCHEN</span>MASTER
+          </a>
+          <ul class="nav-menu">
+            <li>
+              <a href="#"><i class="fas fa-home"></i> Главная</a>
+            </li>
+            <li>
+              <a href="#quiz"
+                ><i class="fas fa-puzzle-piece"></i> Конструктор</a
+              >
+            </li>
+            <li>
+              <a href="#portfolio"><i class="fas fa-images"></i> Портфолио</a>
+            </li>
+            <li>
+              <a href="#services"><i class="fas fa-tools"></i> Услуги</a>
+            </li>
+            <li>
+              <a href="#process"><i class="fas fa-list-ol"></i> Процесс</a>
+            </li>
+            <li>
+              <a href="#contact"><i class="fas fa-phone"></i> Контакты</a>
+            </li>
+          </ul>
+          <div class="nav-buttons">
+            <button class="btn btn-primary start-quiz-btn">
+              <i class="fas fa-magic"></i> Создать кухню
+            </button>
+          </div>
+          <div class="hamburger">
+            <i class="fas fa-bars"></i>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Герой-секция -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Ваша <span class="highlight">идеальная кухня</span><br />
+            всего за 5 шагов
+          </h1>
+          <p class="hero-subtitle">
+            Создайте кухню мечты с помощью нашего интерактивного
+            конструктора.<br />
+            Подберем стиль, материалы, фурнитуру и рассчитаем стоимость онлайн.
+          </p>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-number">500+</span>
+              <span class="stat-text">готовых кухонь</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">10 лет</span>
+              <span class="stat-text">опыта работы</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">24/7</span>
+              <span class="stat-text">поддержка</span>
+            </div>
+          </div>
+          <button class="btn btn-hero start-quiz-btn">
+            <i class="fas fa-play-circle"></i> Начать конструктор кухни
+          </button>
+        </div>
+        <div class="hero-image">
+          <div class="image-container">
+            <div class="floating-element elem1">
+              <i class="fas fa-ruler-combined"></i>
+              <span>3D-замер</span>
+            </div>
+            <div class="floating-element elem2">
+              <i class="fas fa-palette"></i>
+              <span>100+ цветов</span>
+            </div>
+            <div class="floating-element elem3">
+              <i class="fas fa-gem"></i>
+              <span>Премиум-материалы</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Основной квиз-конструктор -->
+    <section class="quiz-section" id="quiz">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Конструктор вашей кухни</h2>
+          <p class="section-subtitle">
+            Ответьте на 5 вопросов и получите дизайн-проект и точный расчет
+            стоимости
+          </p>
+          <div class="progress-bar">
+            <div class="progress" id="quiz-progress"></div>
+            <div class="progress-step active">1</div>
+            <div class="progress-step">2</div>
+            <div class="progress-step">3</div>
+            <div class="progress-step">4</div>
+            <div class="progress-step">5</div>
+          </div>
+        </div>
+
+        <!-- Шаг 1: Стиль -->
+        <div class="quiz-step active" id="step-1">
+          <h3>Выберите стиль кухни</h3>
+          <p class="step-description">Какой дизайн вам ближе?</p>
+          <div class="options-grid">
+            <div class="option-card" data-value="modern">
+              <div class="option-image" style="background-color: #2c3e50"></div>
+              <div class="option-content">
+                <h4>Современный</h4>
+                <p>Минимализм, глянцевые фасады, прямые линии</p>
+              </div>
+              <div class="option-check">
+                <i class="fas fa-check"></i>
+              </div>
+            </div>
+            <div class="option-card" data-value="classic">
+              <div class="option-image" style="background-color: #8b4513"></div>
+              <div class="option-content">
+                <h4>Классический</h4>
+                <p>Дерево, резные элементы, натуральные материалы</p>
+              </div>
+              <div class="option-check">
+                <i class="fas fa-check"></i>
+              </div>
+            </div>
+            <div class="option-card" data-value="loft">
+              <div class="option-image" style="background-color: #7f8c8d"></div>
+              <div class="option-content">
+                <h4>Лофт</h4>
+                <p>Кирпич, металл, индустриальные элементы</p>
+              </div>
+              <div class="option-check">
+                <i class="fas fa-check"></i>
+              </div>
+            </div>
+            <div class="option-card" data-value="scandinavian">
+              <div class="option-image" style="background-color: #ecf0f1"></div>
+              <div class="option-content">
+                <h4>Скандинавский</h4>
+                <p>Светлые тона, натуральное дерево, простота</p>
+              </div>
+              <div class="option-check">
+                <i class="fas fa-check"></i>
+              </div>
+            </div>
+          </div>
+          <div class="quiz-buttons">
+            <button class="btn btn-next" onclick="nextStep()">
+              Далее <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Шаг 2: Размер -->
+        <div class="quiz-step" id="step-2">
+          <h3>Размер вашей кухни</h3>
+          <p class="step-description">
+            Укажите приблизительные размеры помещения
+          </p>
+          <div class="options-grid">
+            <div class="option-card size-card" data-value="small">
+              <div class="size-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <div class="option-content">
+                <h4>До 6 м²</h4>
+                <p>Малогабаритная кухня</p>
+                <div class="price-estimate">от 85 000 ₽</div>
+              </div>
+            </div>
+            <div class="option-card size-card" data-value="medium">
+              <div class="size-icon">
+                <i class="fas fa-home"></i>
+                <i class="fas fa-home"></i>
+              </div>
+              <div class="option-content">
+                <h4>6-12 м²</h4>
+                <p>Стандартная кухня</p>
+                <div class="price-estimate">от 150 000 ₽</div>
+              </div>
+            </div>
+            <div class="option-card size-card" data-value="large">
+              <div class="size-icon">
+                <i class="fas fa-home"></i>
+                <i class="fas fa-home"></i>
+                <i class="fas fa-home"></i>
+              </div>
+              <div class="option-content">
+                <h4>Более 12 м²</h4>
+                <p>Большая кухня/кухня-гостиная</p>
+                <div class="price-estimate">от 250 000 ₽</div>
+              </div>
+            </div>
+          </div>
+          <div class="size-inputs">
+            <div class="input-group">
+              <label>Длина (м):</label>
+              <input
+                type="number"
+                id="length"
+                min="1"
+                max="10"
+                step="0.1"
+                value="4"
+              />
+            </div>
+            <div class="input-group">
+              <label>Ширина (м):</label>
+              <input
+                type="number"
+                id="width"
+                min="1"
+                max="10"
+                step="0.1"
+                value="3"
+              />
+            </div>
+            <div class="input-group">
+              <label>Высота (м):</label>
+              <input
+                type="number"
+                id="height"
+                min="2"
+                max="3.5"
+                step="0.1"
+                value="2.5"
+              />
+            </div>
+          </div>
+          <div class="quiz-buttons">
+            <button class="btn btn-prev" onclick="prevStep()">
+              <i class="fas fa-arrow-left"></i> Назад
+            </button>
+            <button class="btn btn-next" onclick="nextStep()">
+              Далее <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Шаг 3: Материалы -->
+        <div class="quiz-step" id="step-3">
+          <h3>Материалы и фурнитура</h3>
+          <p class="step-description">Выберите желаемые материалы</p>
+          <div class="materials-grid">
+            <div class="material-card" data-value="plastic">
+              <div class="material-header">
+                <i class="fas fa-layer-group"></i>
+                <h4>Пластик/МДФ</h4>
+              </div>
+              <p>Практичный и доступный вариант</p>
+              <div class="material-tags">
+                <span class="tag">Влагостойкий</span>
+                <span class="tag">Легкий уход</span>
+              </div>
+              <div class="material-price">+ 0 ₽</div>
+            </div>
+            <div class="material-card active" data-value="wood">
+              <div class="material-header">
+                <i class="fas fa-tree"></i>
+                <h4>Массив дерева</h4>
+              </div>
+              <p>Премиум качество, натуральная текстура</p>
+              <div class="material-tags">
+                <span class="tag">Экологично</span>
+                <span class="tag">Долговечно</span>
+              </div>
+              <div class="material-price">+ 45 000 ₽</div>
+            </div>
+            <div class="material-card" data-value="glass">
+              <div class="material-header">
+                <i class="fas fa-glass-whiskey"></i>
+                <h4>Стекло/Металл</h4>
+              </div>
+              <p>Современный стиль, эффектный внешний вид</p>
+              <div class="material-tags">
+                <span class="tag">Современно</span>
+                <span class="tag">Стильно</span>
+              </div>
+              <div class="material-price">+ 30 000 ₽</div>
+            </div>
+          </div>
+          <div class="furniture-options">
+            <h4>Дополнительные опции</h4>
+            <div class="options-list">
+              <label class="checkbox-option">
+                <input type="checkbox" name="options" value="led" checked />
+                <span class="checkmark"></span>
+                Подсветка LED (+8 000 ₽)
+              </label>
+              <label class="checkbox-option">
+                <input type="checkbox" name="options" value="system" checked />
+                <span class="checkmark"></span>
+                Системы хранения BLUM (+15 000 ₽)
+              </label>
+              <label class="checkbox-option">
+                <input type="checkbox" name="options" value="sink" />
+                <span class="checkmark"></span>
+                Гранитная мойка (+12 000 ₽)
+              </label>
+              <label class="checkbox-option">
+                <input type="checkbox" name="options" value="table" />
+                <span class="checkmark"></span>
+                Раздвижной стол (+25 000 ₽)
+              </label>
+            </div>
+          </div>
+          <div class="quiz-buttons">
+            <button class="btn btn-prev" onclick="prevStep()">
+              <i class="fas fa-arrow-left"></i> Назад
+            </button>
+            <button class="btn btn-next" onclick="nextStep()">
+              Далее <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Шаг 4: Цветовая гамма -->
+        <div class="quiz-step" id="step-4">
+          <h3>Цветовая гамма</h3>
+          <p class="step-description">Выберите основной цвет кухни</p>
+          <div class="color-picker">
+            <div
+              class="color-option"
+              style="background-color: #ffffff"
+              data-color="#ffffff"
+              data-name="Белый глянец"
+            >
+              <span>Белый глянец</span>
+            </div>
+            <div
+              class="color-option"
+              style="background-color: #2c3e50"
+              data-color="#2c3e50"
+              data-name="Графит"
+            >
+              <span>Графит</span>
+            </div>
+            <div
+              class="color-option active"
+              style="background-color: #3498db"
+              data-color="#3498db"
+              data-name="Небесный"
+            >
+              <span>Небесный</span>
+            </div>
+            <div
+              class="color-option"
+              style="background-color: #27ae60"
+              data-color="#27ae60"
+              data-name="Изумруд"
+            >
+              <span>Изумруд</span>
+            </div>
+            <div
+              class="color-option"
+              style="background-color: #e74c3c"
+              data-color="#e74c3c"
+              data-name="Красный"
+            >
+              <span>Красный</span>
+            </div>
+            <div
+              class="color-option"
+              style="background-color: #f1c40f"
+              data-color="#f1c40f"
+              data-name="Желтый"
+            >
+              <span>Желтый</span>
+            </div>
+            <div
+              class="color-option"
+              style="background-color: #9b59b6"
+              data-color="#9b59b6"
+              data-name="Фиолетовый"
+            >
+              <span>Фиолетовый</span>
+            </div>
+            <div
+              class="color-option"
+              style="background-color: #1abc9c"
+              data-color="#1abc9c"
+              data-name="Бирюза"
+            >
+              <span>Бирюза</span>
+            </div>
+          </div>
+          <div class="color-preview">
+            <div class="preview-image" id="color-preview">
+              <!-- Здесь будет предпросмотр кухни выбранного цвета -->
+            </div>
+            <div class="preview-info">
+              <h4 id="selected-color-name">Небесный</h4>
+              <p>
+                Современный глянцевый фасад, устойчивый к влаге и загрязнениям
+              </p>
+            </div>
+          </div>
+          <div class="quiz-buttons">
+            <button class="btn btn-prev" onclick="prevStep()">
+              <i class="fas fa-arrow-left"></i> Назад
+            </button>
+            <button class="btn btn-next" onclick="nextStep()">
+              Далее <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Шаг 5: Контакты и расчет -->
+        <div class="quiz-step" id="step-5">
+          <h3>Получите расчет и дизайн-проект</h3>
+          <p class="step-description">
+            Оставьте контакты для получения детального расчета
+          </p>
+          <div class="result-summary">
+            <div class="summary-card">
+              <h4>Ваша конфигурация:</h4>
+              <ul class="summary-list">
+                <li>
+                  <strong>Стиль:</strong>
+                  <span id="summary-style">Современный</span>
+                </li>
+                <li>
+                  <strong>Размер:</strong>
+                  <span id="summary-size">Стандартная (6-12 м²)</span>
+                </li>
+                <li>
+                  <strong>Материал:</strong>
+                  <span id="summary-material">Массив дерева</span>
+                </li>
+                <li>
+                  <strong>Цвет:</strong>
+                  <span id="summary-color">Небесный</span>
+                </li>
+                <li>
+                  <strong>Дополнительно:</strong>
+                  <span id="summary-options"
+                    >Подсветка LED, системы хранения BLUM</span
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="price-card">
+              <div class="price-total">
+                <span class="price-label">Предварительная стоимость:</span>
+                <span class="price-value" id="total-price">215 000 ₽</span>
+              </div>
+              <div class="price-note">
+                <i class="fas fa-info-circle"></i>
+                <p>
+                  Точная стоимость будет рассчитана после бесплатного замера
+                  специалистом
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form">
+            <div class="form-group">
+              <input type="text" id="name" placeholder="Ваше имя" required />
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="form-group">
+              <input type="tel" id="phone" placeholder="Ваш телефон" required />
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" placeholder="E-mail для проекта" />
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="form-group full-width">
+              <textarea
+                id="message"
+                placeholder="Дополнительные пожелания или комментарии..."
+              ></textarea>
+            </div>
+            <button class="btn btn-submit" onclick="submitQuiz()">
+              <i class="fas fa-paper-plane"></i> Получить расчет и 3D-проект
+            </button>
+            <p class="privacy-note">
+              Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+            </p>
+          </div>
+          <div class="quiz-buttons">
+            <button class="btn btn-prev" onclick="prevStep()">
+              <i class="fas fa-arrow-left"></i> Назад
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция портфолио -->
+    <section class="portfolio-section" id="portfolio">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Наши работы</h2>
+          <p class="section-subtitle">Реализованные проекты кухонь и шкафов</p>
+        </div>
+        <div class="portfolio-filters">
+          <button class="filter-btn active" data-filter="all">Все</button>
+          <button class="filter-btn" data-filter="kitchen">Кухни</button>
+          <button class="filter-btn" data-filter="wardrobe">Шкафы</button>
+          <button class="filter-btn" data-filter="modern">Современные</button>
+          <button class="filter-btn" data-filter="classic">Классические</button>
+        </div>
+        <div class="portfolio-grid">
+          <div class="portfolio-item" data-category="kitchen modern">
+            <div class="portfolio-image"></div>
+            <div class="portfolio-info">
+              <h4>Кухня в стиле лофт</h4>
+              <p>Москва, 12 м²</p>
+              <span class="portfolio-price">285 000 ₽</span>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="kitchen classic">
+            <div class="portfolio-image"></div>
+            <div class="portfolio-info">
+              <h4>Классическая кухня из дуба</h4>
+              <p>Подмосковье, 9 м²</p>
+              <span class="portfolio-price">320 000 ₽</span>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="wardrobe modern">
+            <div class="portfolio-image"></div>
+            <div class="portfolio-info">
+              <h4>Встроенный гардероб</h4>
+              <p>Москва, 6 м²</p>
+              <span class="portfolio-price">145 000 ₽</span>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="kitchen modern">
+            <div class="portfolio-image"></div>
+            <div class="portfolio-info">
+              <h4>Минималистичная кухня</h4>
+              <p>Москва, 7 м²</p>
+              <span class="portfolio-price">195 000 ₽</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция процесса работы -->
+    <section class="process-section" id="process">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Как мы работаем</h2>
+          <p class="section-subtitle">Всего 5 шагов от идеи до готовой кухни</p>
+        </div>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>Консультация и замер</h4>
+              <p>
+                Бесплатный выезд замерщика, консультация по материалам и
+                планировке
+              </p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>3D-дизайн проект</h4>
+              <p>
+                Создаем 3D-визуализацию вашей будущей кухни со всеми деталями
+              </p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>Изготовление</h4>
+              <p>
+                Производство на современном оборудовании в течение 14-21 дня
+              </p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h4>Доставка и сборка</h4>
+              <p>
+                Аккуратная доставка и профессиональная сборка нашими мастерами
+              </p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <h4>Гарантия и сервис</h4>
+              <p>
+                Гарантия 3 года на все изделия и пожизненное сервисное
+                обслуживание
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Подвал сайта -->
+    <footer class="footer" id="contact">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h4>KITCHEN MASTER</h4>
+            <p>
+              Создаем кухни мечты с 2012 года. Индивидуальный подход,
+              качественные материалы и современные технологии.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-vk"></i></a>
+              <a href="#"><i class="fab fa-telegram"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h4>Контакты</h4>
+            <ul class="contact-list">
+              <li>
+                <i class="fas fa-map-marker-alt"></i> Москва, ул. Кухонная, 15
+              </li>
+              <li><i class="fas fa-phone"></i> +7 (999) 123-45-67</li>
+              <li><i class="fas fa-envelope"></i> info@kitchen-master.ru</li>
+              <li>
+                <i class="fas fa-clock"></i> Пн-Пт: 9:00-20:00, Сб-Вс:
+                10:00-18:00
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Быстрые ссылки</h4>
+            <ul class="footer-links">
+              <li><a href="#quiz">Конструктор кухни</a></li>
+              <li><a href="#portfolio">Портфолио</a></li>
+              <li><a href="#process">Процесс работы</a></li>
+              <li><a href="#">О компании</a></li>
+              <li><a href="#">Блог</a></li>
+              <li><a href="#">Отзывы</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Получить расчет</h4>
+            <p>Оставьте телефон и мы перезвоним вам в течение 15 минут</p>
+            <div class="footer-form">
+              <input type="tel" placeholder="Ваш телефон" />
+              <button class="btn btn-small">Позвоните мне</button>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2023 KITCHEN MASTER. Все права защищены.</p>
+          <a href="#" class="policy-link">Политика конфиденциальности</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Кнопка наверх -->
+    <button class="scroll-top" id="scrollTop">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Модальное окно успешной отправки -->
+    <div class="modal" id="successModal">
+      <div class="modal-content">
+        <div class="modal-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <h3>Заявка отправлена!</h3>
+        <p>
+          Мы получили ваши ответы и свяжемся с вами в течение 30 минут для
+          уточнения деталей.
+        </p>
+        <p>
+          На ваш email будет отправлен предварительный расчет и примеры
+          3D-проектов.
+        </p>
+        <button class="btn btn-modal" onclick="closeModal()">Отлично!</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
